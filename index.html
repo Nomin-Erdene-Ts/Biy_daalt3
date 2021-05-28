@@ -1,0 +1,87 @@
+<html>
+    <head>
+        <title>Ц.Номин-Эрдэнэ</title>
+        <meta charset="utf-8">
+        <style>
+            #das2{
+                width:100;
+                height: 100;
+                background-color: yellow;
+            }
+            #das6_div{
+                width: 100px;
+                height: 100px;
+                background-color: blue;
+            }
+        </style>
+    </head>
+    <body>
+        <h3>Дасгал 1</h3>
+        <div id="dasgal1">
+            1st number: <input type="number" name="" id="1stnumber"><br>
+            2nd number: <input type="number" name="" id="2ndnumber"><br>
+            <button id="mult">Multiply</button>
+            <button id="div">Divide</button>
+            <p>The Result is: </p>
+        <p id="result"></p>
+        </div>
+        <h3>Дасгал 2</h3>
+        <div id="das2"></div>
+        <h3>Дасгал 3</h3>
+        Focus hiivel huree ni tsenher bolno. <input type="text" id="das3">
+        <h4>Дасгал 4</h4>
+        <p id="das4">3 сек дараа window alert-д гарна. </p>
+        <h4>Дасгал 5</h4>
+        <input type="text" id="das5_text" value="Энэ текстийг хуулна уу.">
+        <p id="das5"></p>
+        <h4>Дасгал 6</h4>
+        <div id="das6_div">
+            <p>Button deer dar </p>
+            <p id="demo"></p>
+            <button onclick="removeHandler()" id="myBtn">Try it</button>
+        </div>
+    </body>
+    <script>
+        //dasgal1 
+        document.getElementById("mult").addEventListener("click", multiply);
+        document.getElementById("div").addEventListener("click", divide);
+        function multiply(){
+            var x= document.getElementById("1stnumber").value;
+            var y= document.getElementById("2ndnumber").value;
+            document.getElementById("result").innerHTML=x*y;
+        }
+        function divide(){
+            var x= document.getElementById("1stnumber").value;
+            var y= document.getElementById("2ndnumber").value;
+            document.getElementById("result").innerHTML=x/y;
+        }
+        document.getElementById("das2").addEventListener("mouseover",function(){
+            document.getElementById("das2").style.backgroundColor="blue";
+        })
+        document.getElementById("das3").addEventListener("focus", function(){
+            document.getElementById("das3").style.borderColor="blue";
+        })
+        document.getElementById("das4").addEventListener("dbclick", window3s);
+        function window3s(){
+            window.setTimeout("alert()", 3000);
+        }
+        function alert(){
+            window.alert(document.getElementById("das4").innerHTML);
+        }
+        document.getElementById("das5_text").addEventListener("copy", copy);
+        function copy(){
+            alert("Текстийг хууллаа.!");
+        }
+        document.getElementById("myDIV").addEventListener("mousemove", das6);
+
+        function das6() {
+            document.getElementById("demo").innerHTML = Math.random();
+        }
+
+        function removeHandler() {
+        document.getElementById("myDIV").removeEventListener("mousemove", das6);
+        }
+
+        
+    </script>
+</html>
